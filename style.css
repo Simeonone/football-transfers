@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 90%;
+}
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", "Times New Roman", Times, serif;
+  color: black;
+  background-color: beige;
+  padding: 3rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.greetings {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+.login {
+  display: flex;
+}
+.user--login {
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid whitesmoke;
+  transition: all 0.5s;
+}
+.user--login:focus {
+  outline: none;
+  border: 1px solid grey;
+}
+.user--login::placeholder {
+  color: gainsboro;
+}
+.loginBtn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.loginBtn:hover,
+.loginBtn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: grey;
+}
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(2, 15rem) auto;
+  gap: 2rem;
+  opacity: 0;
+  transition: all 1s;
+}
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 0.1rem;
+}
+.balance--label {
+  font-size: 1.2rem;
+  font-weight: 250;
+  margin-bottom: -0.2rem;
+}
+.dashboard {
+  font-size: 3.2rem;
+  font-weight: 500;
+}
+.balance--date {
+  font-size: 1.4rem;
+  color: gray;
+}
+.transactionHistoryText {
+  margin-top: 2.5rem;
+  font-size: 2rem;
+  color: black;
+}
+.balance--value {
+  font-size: 3rem;
+  font-weight: 400;
+}
+.transfers {
+  overflow: scroll;
+  grid-row: 2 / span 2;
+  background-color: white;
+  border-radius: 1rem;
+}
+.transfers--row {
+  padding: 2.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid wheat;
+}
+.transfer--type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: whitesmoke;
+  padding: 0.1rem 1rem;
+  border-radius: 1rem;
+  margin-right: 2rem;
+}
+.transfer--date {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: gray;
+}
+.transfers--name {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.transfer--amount {
+  font-size: 1rem;
+  /* margin-left: auto; */
+}
+.transfers--type--out {
+  background-color: #8ca765;
+}
+.transfers--type--in {
+  background-color: #ff7f7f;
+}
+.summary {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+.summary--label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+.summary--value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+.summary--value--out {
+  color: #ff7f7f;
+  /* margin-left: auto; */
+}
+.summary--value--in {
+  color: #8ca765;
+  /* margin-left: auto; */
+}
+.btn--sort {
+  /* margin-left: auto; */
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 0.8rem;
+  color: #333;
+}
+.operation--buyPlayer {
+  background-color: #8ca765;
+}
+.operation--sellPlayer {
+  background-color: #ff7f7f;
+}
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+}
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.2rem 0.8rem;
+}
+.options--buyPlayers {
+  margin-top: 2.7rem;
+}
+.myOptions {
+  font-size: 1.2rem;
+  /* text-align: right; */
+}
+.logoutBtn,
+.showLoginDetails {
+  margin-left: 0.3rem;
+  border: none;
+  font-family: inherit;
+  padding: 0.4rem;
+  background-color: wheat;
+  border-radius: 0.7rem;
+}
+.logoutBtn:hover,
+.showLoginDetails:hover {
+  cursor: pointer;
+  background-color: sandybrown;
+}
+.form--sell {
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+}
+.form--input {
+  /* width: 100%; */
+  border: none;
+  font-family: inherit;
+  /* font-size: 1.5rem; */
+  background-color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  /* margin: 1rem; */
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+.form--input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.form--label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.options,
+.myOptions {
+  font-size: 0.9rem;
+  text-align: left;
+  font-style: italic;
+}
+
+.options--sellPlayers {
+  display: flex;
+}
+.form--btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.form--btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.logout--timer {
+  padding: 0 0.3rem;
+  text-align: center;
+  margin: 1.9rem 0;
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: all 1s;
+}
+.timer {
+  font-weight: 600;
+}
+.loginDetails {
+  display: flex;
+  justify-content: center;
+  /* font-size: 2rem; */
+}
+.showLoginDetails {
+  font-size: 1.1rem;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 1.5rem;
+  border-collapse: collapse;
+}
+th,
+td {
+  font-size: 1.1rem;
+}
+.myTable {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.form--btn--buyPlayerInside {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  body {
+    text-align: center;
+    /* font-size: 65%; */
+    /* background-color: red; */
+    padding: 2rem 1rem;
+  }
+  .greetings {
+    font-size: 1rem;
+    font-weight: 250;
+  }
+  .user--login {
+    padding: 0.25rem 1rem;
+    font-size: 0.8rem;
+    width: 6rem;
+    border-radius: 5rem;
+    margin-right: 0.5rem;
+    border: 0.5px;
+  }
+  .logoutBtn,
+  .showLoginDetails {
+    margin-left: 0.15rem;
+    padding: 0.2rem;
+    border-radius: 0.35rem;
+  }
+  .logo {
+    margin-top: 50px;
+    width: 136.2;
+    height: 109.5;
+  }
+  .logout--timer {
+    padding: 0 0.15rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+  }
+  .timer {
+    font-weight: 600;
+  }
+  .dashboard {
+    font-size: 1.9rem;
+    font-weight: 500;
+  }
+  .balance--label {
+    font-size: 1.6rem;
+    margin-bottom: -0.1rem;
+  }
+  .balance--value {
+    font-size: 1.9rem;
+  }
+  .balance--date {
+    font-size: 1.4rem;
+  }
+  .loginHeaderInfo {
+    text-align: center;
+  }
+  .transactionHistoryText {
+    font-size: 1.5rem;
+  }
+  .app {
+    display: unset;
+  }
+
+  .summary--value {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+  }
+
+  .mainAppSummary {
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: row; */
+  }
+  .transfers {
+    overflow: scroll;
+    /* grid-row: 1 / span 1; */
+    grid-row: revert;
+    /* background-color: white; */
+    border-radius: 0.5rem;
+  }
+  .transfers--row {
+    padding: 1.25rem 0.5rem;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    border-bottom: 0.5px;
+  }
+  .transfers--name {
+    /* text-transform: uppercase; */
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .transfer--amount {
+    font-size: 0.8rem;
+    /* margin-left: auto; */
+  }
+  .mainApp {
+    display: flex;
+    flex-direction: column;
+  }
+  .operation {
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+  }
+  .form--btn--SellPlayer {
+    font-size: 1.4rem;
+    font-weight: bold;
+    height: 2rem;
+    width: 5rem;
+  }
+  .form--label {
+    font-size: 1rem;
+  }
+  .form--input {
+    padding: 0.3rem 0;
+    border-radius: 0.7rem;
+  }
+  .form--sell {
+    grid-template-columns: auto auto auto;
+  }
+  .sellContent {
+    font-size: 1rem;
+  }
+  .form--input--playerSaletoWhichClub {
+    width: 8rem;
+  }
+}

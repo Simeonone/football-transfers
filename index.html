@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" type="image/png" href="MY_LOGO.png" />
+    <title>Simeon's Football Transfers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <p class="greetings">Enter your login credentials to get started 
+        <br>
+          (CASE SENSITIVE)
+      </p>
+      <form class="login">
+        <input
+          type="text"
+          placeholder="User"
+          class="user--login user--login--username"
+        />
+        <input
+          type="password"
+          placeholder="PIN"
+          maxlength="4"
+          class="user--login user--login--password"
+        />
+        <button class="loginBtn">&rarr;</button>
+      </form>
+    </header>
+    <!-- Logout timer -->
+    <p class="logout--timer">
+      You will automatically be logged out due to incativity in <span class="timer">05:00</span>
+     <span><button type="button" class="logoutBtn">LOGOUT</button> </span>
+    </p>
+    <section>
+      <div class="loginDetails">
+      <button type="button" class="showLoginDetails">SHOW LOGIN DETAILS</button>
+      </div>
+      <div class="userLoginDetails">
+        <div class="myTable">
+        <table>
+          <tr>
+            <th>Logins for:</th>
+            <th>User</th>
+            <th>Pin</th>
+          </tr>
+          <tr>
+            <td>Chelsea Football Club</td>
+            <td>CFC</td>
+            <td>1111</td>
+          </tr>
+          <tr>
+            <td>Manchester United Football Club</td>
+            <td>MUFC</td>
+            <td>2222</td>
+          </tr>
+          <tr>
+            <td>Liverpool Football Club</td>
+            <td>LFC</td>
+            <td>3333</td>
+          </tr>
+        </table>
+        </div>
+      </div>
+      <div class="logo">
+        <img src="MY_LOGO2.png" width="272.4" height="219" />
+      </div>
+      <div>
+      </div>
+    </section>
+    <main class="app">
+      <div class="balance">
+        <div class="loginHeaderInfo">
+          <p class="dashboard">Dashboard</p>
+          <p class="balance--label">Club Bank Balance:</p>
+          <p class="balance--value">0000£</p>
+          <p class="balance--date">
+            As of <span class="dateToday">01/01/2037</span>
+          </p>
+            <p class = "transactionHistoryText">Transaction History:</p>
+        </div>
+      </div>
+      <!-- TRANSFERS -->
+      <div class="transfers mainApp">
+        <div class="transfers--row">
+          <div class="transfers--name">Cristiano Ronaldo</div>
+          <div class="transfer--type transfers--type--out">1 Out</div>
+          <div class="transfer--date">3 days ago</div>
+          <div class="transfer--amount">12000000 £</div>
+        </div>
+        <div class="transfers--row">
+          <div class="transfers--name">Robert Lewandoski</div>
+          <div class="transfer--type transfers--type--in">2 In</div>
+          <div class="transfer--date">12/12/2021</div>
+          <div class="transfer--amount">- 11000000 £</div>
+        </div>
+      </div>
+      <div class="summary mainAppSummary">
+        <div class="summaryContent">
+          <p class="summary--label">In</p>
+          <p class="summary--value summary--value--in">0000£</p>
+        </div>
+        <div class="summaryContent">
+          <p class="summary--label">Out</p>
+          <p class="summary--value summary--value--out">0000£</p>
+        </div>
+        <div class="summaryContent">
+          <button class="btn--sort">&downarrow; SORT(by amount)</button>
+        </div>
+      </div>
+      <!-- Transfers -->
+      <div class="operation operation--buyPlayer mainApp">
+        <h2 class="buy--player">Buy Player</h2>
+        <form class="form form--buyPlayer">
+          <input type="text" class="form--input form--input--playerInitialsBuy" />
+          <input type="number" class="form--input form--input--amount" />
+          <button class="form--btn form--btn--buyPlayer">&rarr;</button>
+          <button class="form--btn form--btn--buyPlayerInside">&rarr;</button>
+          <label class="form--label form--label--playerInitials"
+            >Player Initials</label
+          >
+          <label class="form--label form--label--playerAmount">Amount</label>
+          <p class="options--buyPlayers">
+            <div class="myOptions"> 
+              <strong class="availablePlayers"> Available players: </strong> <span class="player--buyOptions">RL, CR, LM, KM</span> <span class="player--fromClub"></span>
+            
+            </div>
+          </p>
+        </form>
+      </div>
+      <!-- Sell Players -->
+      <div class="operation operation--sellPlayer mainApp">
+        <h2 class="sellPlayerHeader">Sell Player</h2>
+        <form class="form form--sell">
+          <!-- <div> -->
+            
+            <input
+              type="text"
+              class="form--input form--input--playerInitialsSell"
+            />
+            <!-- <label class="form--label">Player Initials</label> -->
+          <!-- </div> -->
+          <!-- <div> -->
+            <input
+              type="number"
+              class="form--input form--input--playerSaleAmount"
+            />
+            <!-- <label class="form--label">Amount</label> -->
+          <!-- </div> -->
+          <!-- <div> -->
+            <input
+              type="text"
+              class="form--input form--input--playerSaletoWhichClub"
+            />
+            <!-- <label class="form--label">Sell to which club</label> -->
+          <!-- </div> -->
+          
+          <label class="form--label">Player Initials</label>
+          <label class="form--label">Amount</label>
+          <label class="form--label sellContent">Sell to which club  </label>
+          <p class="form--label options"> <strong> Available players: </strong> <span class="playerSaleOptions">  EH, KDB, NK </span></p>
+          <p class="form--label options"> <strong> Available clubs: </strong> <span class="availableClubs"> CFC, MUFC, MCFC </span> </p>
+          <button class="form--btn form--btn--SellPlayer">&rarr;</button>
+        </form>
+      </div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
