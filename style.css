@@ -309,6 +309,9 @@ td {
 .form--btn--buyPlayerInside {
   display: none;
 }
+.form--label-media {
+  display: none;
+}
 
 @media (max-width: 780px) {
   body {
@@ -427,10 +430,26 @@ td {
     border-radius: 0.7rem;
   }
   .form--sell {
-    grid-template-columns: auto auto auto;
+    /* grid-template-columns: auto auto auto; */
+    display: flex;
+    flex-direction: column;
+  }
+  /* .media-query {
+    display: flex;
+    flex-direction: column;
+  } */
+  .form--label-media {
+    display: block;
+  }
+  .big-screen {
+    display: none;
   }
   .sellContent {
     font-size: 1rem;
+  }
+  .form--btn--SellPlayer,
+  .options {
+    margin: auto;
   }
   .form--input--playerSaletoWhichClub {
     width: 8rem;
