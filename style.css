@@ -441,6 +441,13 @@ td {
   .form--label-media {
     display: block;
   }
+  .logoutBtn {
+    display: block;
+    margin: auto;
+  }
+  .loginHeaderInfo {
+    margin: auto;
+  }
   .big-screen {
     display: none;
   }
