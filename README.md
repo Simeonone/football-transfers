@@ -27,5 +27,7 @@ The user can now log in to the club the player was bought from and the same tran
 
 ## Selling Players
 Here, the user inputs the **Player initials**, **Amount**, and which club the player in the current club is being **sold to**.
-The options are available in the *Available Players* and *Available clubs* under the *selling players* tab
+
+The options are available in the *Available Players* and *Available clubs* under the *selling players* tab.
+
 The user can now log in to the club the player was sold to and the same transaction will be displayed on their *transaction history*.
