@@ -12,7 +12,7 @@ Click the show login credentials and key them in to log in.
 ***
 
 ## Buying Players
-See the list of **Available Players**, and input any of the initials and press the next arrow
+See the list of **Available Players**, and input any of the initials and press next
 
 The area that was initially showing *available players* now shows the **Player name** and the *football club* the player is from
 
