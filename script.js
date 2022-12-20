@@ -275,6 +275,16 @@ function updateUI(fclub) {
   //display summary function - from three above
   displaySummary(fclub);
 }
+function logoutEffect() {
+  //repeat 0110
+  myApp.style.opacity = 0;
+  mainLogo.style.display = "";
+  logoutTimer.style.opacity = 0;
+  loginForm.style.display = "";
+  document.querySelector(".loginDetails").style.display = "";
+  // document.querySelector(".myTable").style.display = "";
+  greetings.textContent = `Enter your login credentials to get started`;
+}
 
 function startLogoutTimer() {
   function tick() {
@@ -285,14 +295,15 @@ function startLogoutTimer() {
     //in each call, print the remeining time to the UI
     if (time === 0) {
       clearInterval(timer);
-      //repeat 0110
-      myApp.style.opacity = 0;
-      mainLogo.style.display = "";
-      logoutTimer.style.opacity = 0;
-      loginForm.style.display = "";
-      document.querySelector(".loginDetails").style.display = "";
-      // document.querySelector(".myTable").style.display = "";
-      greetings.textContent = `Enter your login credentials to get started`;
+      // //repeat 0110
+      logoutEffect();
+      // myApp.style.opacity = 0;
+      // mainLogo.style.display = "";
+      // logoutTimer.style.opacity = 0;
+      // loginForm.style.display = "";
+      // document.querySelector(".loginDetails").style.display = "";
+      // // document.querySelector(".myTable").style.display = "";
+      // greetings.textContent = `Enter your login credentials to get started`;
     }
     time--;
   }
@@ -420,13 +431,14 @@ document.querySelector(".loginDetails").addEventListener("click", function () {
 
 document.querySelector(".logoutBtn").addEventListener("click", function () {
   //repeat 0110
-  myApp.style.opacity = 0;
-  mainLogo.style.display = "";
-  logoutTimer.style.opacity = 0;
-  loginForm.style.display = "";
-  document.querySelector(".loginDetails").style.display = "";
-  // document.querySelector(".myTable").style.display = "";
-  greetings.textContent = `Enter your login credentials to get started`;
+  logoutEffect();
+  // myApp.style.opacity = 0;
+  // mainLogo.style.display = "";
+  // logoutTimer.style.opacity = 0;
+  // loginForm.style.display = "";
+  // document.querySelector(".loginDetails").style.display = "";
+  // // document.querySelector(".myTable").style.display = "";
+  // greetings.textContent = `Enter your login credentials to get started`;
 });
 btnSellPlayer.addEventListener("click", function (e) {
   e.preventDefault();
