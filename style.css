@@ -467,3 +467,10 @@ td {
     row-gap: 3rem;
   }
 }
+
+@media (max-width: 600px) {
+  .mainAppSummary {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
