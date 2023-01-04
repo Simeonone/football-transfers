@@ -476,4 +476,9 @@ td {
   .transfer--type {
     display: none;
   }
+  .summaryContent {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+  }
 }
