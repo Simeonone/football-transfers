@@ -473,4 +473,7 @@ td {
     display: flex;
     flex-direction: column-reverse;
   }
+  .transfer--type {
+    display: none;
+  }
 }
