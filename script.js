@@ -154,14 +154,14 @@ let displaytransferCost = function (_, sort = false) {
   // sort = true;
   document.querySelector(".transfers").innerHTML = "";
   // document.querySelector(".sortContent").textContent = `(by Amount)`;
-  console.log(currentClub);
-  console.log(`before the fame`);
+  // console.log(currentClub);
+  // console.log(`before the fame`);
   const trans = sort
     ? currentClub.transferCost.slice().sort(function (a, b) {
         return a - b;
       })
     : currentClub.transferCost;
-  console.log(`after the fame: ${trans}`);
+  // console.log(`after the fame: ${trans}`);
   // console.log(`outer index: ${players}`);
   trans.forEach(function (value, index) {
     const type = value > 0 ? "out" : "in";
@@ -238,7 +238,7 @@ function userNames(clubs) {
   });
 }
 userNames(clubs);
-console.log(clubs);
+// console.log(clubs);
 
 let playersArr = clubs.players;
 function playersInitials(clubs) {
@@ -262,7 +262,7 @@ function playersInitials(clubs) {
   });
 }
 playersInitials(clubs);
-console.log(clubs);
+// console.log(clubs);
 // clubs;
 //Login Event Handlers
 //below contains info of currently logged in club (let currentClub)
@@ -324,7 +324,7 @@ document.querySelector(".loginBtn").addEventListener("click", function (e) {
       value.username === document.querySelector(".user--login--username").value
     );
   });
-  console.log(currentClub);
+  // console.log(currentClub);
   if (
     currentClub?.pin === +document.querySelector(".user--login--password").value
   ) {
@@ -356,7 +356,7 @@ document.querySelector(".loginBtn").addEventListener("click", function (e) {
     updateUI(currentClub);
     //display transfer cost function - from one above
     // displaytransferCost(currentClub.transferCost, currentClub.players);
-    console.log("login");
+    // console.log("login");
   } else {
     greetings.textContent = `Wrong credentials. Please try again`;
   }
@@ -390,22 +390,22 @@ function login() {
   let arrNewSellPlayer = [];
   //below - declared var because it is needed globally, e.g. when we sell a player
   let validPlayers = [];
-  console.log(currentClub.playerInitials);
+  // console.log(currentClub.playerInitials);
   const leoleo = currentClub.transferCost;
   leoleo.filter(function (value, index) {
-    console.log(`major test for indexes: ${index}`);
+    // console.log(`major test for indexes: ${index}`);
     if (leoleo[index] < 0) {
       arrNewSellPlayer.push(value);
       validPlayers.push(currentClub.playerInitials[0][index]);
     }
     return arrNewSellPlayer;
   });
-  console.log(validPlayers);
-  console.log(
-    `valid players are: ${typeof validPlayers} ${
-      Object.keys(validPlayers).length === 0
-    }`
-  );
+  // console.log(validPlayers);
+  // console.log(
+  //   `valid players are: ${typeof validPlayers} ${
+  //     Object.keys(validPlayers).length === 0
+  //   }`
+  // );
   const availableClubs = document.querySelector(".availableClubs");
   let arrNew2 = [];
   clubs.forEach(function (value) {
@@ -413,8 +413,8 @@ function login() {
       arrNew2.push(value.username);
     }
   });
-  console.log(`cc`);
-  console.log(arrNew2);
+  // console.log(`cc`);
+  // console.log(arrNew2);
   availableClubs.textContent = arrNew2;
   if (Object.keys(validPlayers).length === 0) {
     noPlayersLeft();
@@ -452,9 +452,9 @@ btnSellPlayer.addEventListener("click", function (e) {
     return value3 === sellPlayerInitials.value;
   });
   //&& sellPlayerInitials!== 'No players available to sell'
-  console.log(`papa hapa`);
-  console.log(activePlayerInitial11, amount, receiver);
-  console.log(myNewArr);
+  // console.log(`papa hapa`);
+  // console.log(activePlayerInitial11, amount, receiver);
+  // console.log(myNewArr);
   //below - transfer can happen if account is > 0 ... etc
   sellPlayerInitials.value = sellPlayerAmt.value = sellToClubX.value = "";
   if (
@@ -464,23 +464,23 @@ btnSellPlayer.addEventListener("click", function (e) {
     activePlayerInitial11 !== undefined &&
     activePlayerInitial11 !== "No players available to sell"
   ) {
-    console.log("Transfer Valid221");
-    console.log(myNewArr);
+    // console.log("Transfer Valid221");
+    // console.log(myNewArr);
     //below - the player that has been selected
     console.log(activePlayerInitial11);
     let please = currentClub.playerInitials[0].indexOf(activePlayerInitial11);
     let pleaseAgain = currentClub.players[please];
-    console.log(please);
-    console.log(pleaseAgain);
+    // console.log(please);
+    // console.log(pleaseAgain);
     const index = myNewArr.indexOf(activePlayerInitial11);
-    console.log(
-      `index of selected player is: ${index} and the array itselfu is ${myNewArr}`
-    );
+    // console.log(
+    //   `index of selected player is: ${index} and the array itselfu is ${myNewArr}`
+    // );
     if (index > -1) {
       myNewArr.splice(index, 1);
     }
-    console.log(index);
-    console.log(myNewArr);
+    // console.log(index);
+    // console.log(myNewArr);
     if (myNewArr.length >= 0) {
       sellPlayerOptns.textContent = myNewArr;
       let nomoIdeas = buyPlayerOptns.textContent.split(",");
@@ -504,7 +504,7 @@ btnSellPlayer.addEventListener("click", function (e) {
     currentClub.transferDates.push(new Date().toISOString());
     receiver.transferDates.push(new Date().toISOString());
     receiver.playerInitials[0].push(activePlayerInitial11);
-    console.log(receiver);
+    // console.log(receiver);
     updateUI(currentClub);
     // resetting the timer
     clearInterval(timer);
@@ -525,21 +525,21 @@ buyPlayerX.addEventListener("click", function (e) {
   buyPlayerTitle.textContent = `Buy Player`;
   const playerInitBuy = playerInitialsBuy;
   // buyPlayerOptns
-  console.log(`this is what i was looking for`);
-  console.log(
-    buyPlayerOptns.textContent !== "There are no more players to buy"
-  );
+  // console.log(`this is what i was looking for`);
+  // console.log(
+  //   buyPlayerOptns.textContent !== "There are no more players to buy"
+  // );
   const buyPlayerArr = buyPlayerOptns.textContent;
-  console.log(`test: ${buyPlayerOptns.textContent}`);
+  // console.log(`test: ${buyPlayerOptns.textContent}`);
   let buyPlayerArrNew = buyPlayerArr.split(",");
-  console.log(buyPlayerArrNew);
-  console.log(playerInitBuy.value);
+  // console.log(buyPlayerArrNew);
+  // console.log(playerInitBuy.value);
   if (
     buyPlayerArrNew.includes(playerInitBuy.value) &&
     buyPlayerOptns.textContent !== "There are no more players to buy"
   ) {
     buyPlayerTitle.textContent = `Buy Player`;
-    console.log(`player selection successful: ${playerInitBuy.value}`);
+    // console.log(`player selection successful: ${playerInitBuy.value}`);
     currentClub.playerInitials[0].push(playerInitBuy.value);
     hideBuyPlayerAmttxt.style.display = "block";
     playerInitialsLabel.style.display = "none";
@@ -555,10 +555,10 @@ buyPlayerX.addEventListener("click", function (e) {
           value.playerInitials[0].includes(playerInitBuy.value))
       ) {
         //BUYING-NORMALLY
-        console.log(`tupo site`);
-        console.log(playerInitBuy.value !== "There are no more players to buy");
-        console.log(playerInitBuy.value);
-        console.log(value.playerInitials[0]);
+        // console.log(`tupo site`);
+        // console.log(playerInitBuy.value !== "There are no more players to buy");
+        // console.log(playerInitBuy.value);
+        // console.log(value.playerInitials[0]);
         buying(value);
       }
     });
@@ -578,7 +578,7 @@ innerBuyPlayerBtn.addEventListener("click", function (e) {
       value.counter > currentClub.counter &&
       value.playerInitials[0].includes(playerBuyInit.value)
     ) {
-      console.log(hideBuyPlayerAmt.value); // This is the amount the player wwill be bought for
+      // console.log(hideBuyPlayerAmt.value); // This is the amount the player wwill be bought for
       finalisePurchaseUpdateUI();
     }
     if (
@@ -586,7 +586,7 @@ innerBuyPlayerBtn.addEventListener("click", function (e) {
       value.counter === currentClub.counter &&
       value.playerInitials[0].includes(playerBuyInit.value)
     ) {
-      console.log(hideBuyPlayerAmt.value); // This is the amount the player wwill be bought
+      // console.log(hideBuyPlayerAmt.value); // This is the amount the player wwill be bought
       finalisePurchaseUpdateUI();
     }
   });
@@ -594,7 +594,7 @@ innerBuyPlayerBtn.addEventListener("click", function (e) {
 let sorted = false;
 sortBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(`intestine: ${currentClub.transferCost}`);
+  // console.log(`intestine: ${currentClub.transferCost}`);
   displaytransferCost(currentClub.transferCost, !sorted);
   // document.querySelector(".sortContent").textContent = `(by Date)`;
   sorted = !sorted;
@@ -603,7 +603,7 @@ sortBtn.addEventListener("click", function (e) {
 });
 function buying(value) {
   const myIndex = value.playerInitials[0].indexOf(playerInitialsBuy.value);
-  console.log(`first of all ${value} PEWDS ${value.players[myIndex]}`);
+  // console.log(`first of all ${value} PEWDS ${value.players[myIndex]}`);
   playersAvailable.textContent = value.players[myIndex]; //CHRISTIAN PULISIC
   playerXfrom.textContent = value.name; //FROM LIVERPOOL FOOTBALL CLUB
   buyPlayerOptns.style.display = "none";
@@ -614,11 +614,11 @@ function buying(value) {
 function finalisePurchaseUpdateUI() {
   if (hideBuyPlayerAmt.value > 0) {
     buyPlayerTitle.textContent = `Buy Player`;
-    console.log(`we are buying FROM ${playerXfrom.textContent}`);
+    // console.log(`we are buying FROM ${playerXfrom.textContent}`);
     const innerArr = playerXfrom.textContent;
     let innerArrNew = innerArr.split(",");
     const brandNew = playersAvailable.textContent;
-    console.log(`the array we are buying from is ${innerArrNew}`);
+    // console.log(`the array we are buying from is ${innerArrNew}`);
     clubs.forEach(function (value) {
       if (value.name === innerArrNew[0]) {
         currentClub.transferCost.push(-hideBuyPlayerAmt.value);
@@ -667,25 +667,17 @@ function finalisePurchaseUpdateUI() {
         //timer - end
         let arrayAB = playerInitialsBuy.value;
         let arrABNew = arrayAB.split(",");
-        console.log(`retry: ${arrABNew}`);
+        // console.log(`retry: ${arrABNew}`);
         let sellPlayerArr = sellPlayerOptns.textContent;
         let sellPlayerArrNew = sellPlayerArr.split(",");
-        console.log(`my new array: ${sellPlayerArrNew}`);
+        // console.log(`my new array: ${sellPlayerArrNew}`);
         sellPlayerArrNew.push(arrABNew[0]);
         if (sellPlayerArrNew[0] === `No players available to sell`) {
           sellPlayerArrNew.shift();
         }
-        console.log(
-          `what we are pusin to the UI: ${sellPlayerArrNew} aaaand  ${sellPlayerArrNew.length}`
-        );
         sellPlayerOptns.textContent = sellPlayerArrNew;
         //END OF SELLPLAYER UPDATE
 
-        console.log(
-          ` MIC CHECK: ${
-            document.querySelector(".player--buyOptions").textContent
-          }`
-        );
         const finalArr = document.querySelector(
           ".player--buyOptions"
         ).textContent;
@@ -695,7 +687,7 @@ function finalisePurchaseUpdateUI() {
         if (c > -1) {
           finalArrNew.splice(c, 1);
         }
-        console.log(finalArrNew, c);
+        // console.log(finalArrNew, c);
         buyPlayerOptns.textContent = finalArrNew;
         if (finalArrNew.length === 0) {
           buyPlayerOptns.textContent = `There are no more players to buy`;
@@ -714,6 +706,6 @@ function finalisePurchaseUpdateUI() {
 }
 window.addEventListener("beforeunload", function (e) {
   e.preventDefault();
-  console.log(e);
+  // console.log(e);
   e.returnValue = "";
 });
