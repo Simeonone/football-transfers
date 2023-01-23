@@ -637,7 +637,6 @@ function finalisePurchaseUpdateUI() {
           buyPlayerOptns.textContent = `There are no more players to buy`;
         }
         hideBuyPlayerAmt.value = playerInitialsBuy.value = "";
-        //END OF CHRISTIAN PULISIC
       }
     });
   } else {
